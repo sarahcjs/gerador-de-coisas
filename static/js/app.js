@@ -1,4 +1,6 @@
-function carregaCoisa() {
-    var div = document.getElementById('porta-coisas');
-    div.innerHTML += 'Uma Coisa';
-}
+$("#botao").click(function() {
+
+  $.getJSON("/coisa", function(data) {
+    $("#porta-coisas").text(data['coisa']);
+  });
+});
